@@ -14,8 +14,8 @@ const refs = {
 refs.inputEl.addEventListener('input', debounce(onInputChange, DEBOUNCE_DELAY));
 
 function onInputChange() {
+  clearList();
   if (refs.inputEl.value.trim() === '') {
-    clearList();
     return;
   } else {
     fetchCountries(refs.inputEl.value.trim())
